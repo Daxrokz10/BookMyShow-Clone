@@ -1,5 +1,5 @@
 exports.login = (req, res) => {
-    res.send("Login route working 🚀");
+    res.render('index')
 };
 
 exports.signup = (req, res) => {
