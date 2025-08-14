@@ -1,9 +1,30 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    font-family: 'Poppins', sans-serif;
-    background-color: #eb0707;
+
+.navbar-main {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-bar {
+    max-width: 500px;
+    width: 100%;
+}
+
+.secondary-nav {
+    background-color: #f8f8f8;
+    font-size: 14px;
+}
+
+.secondary-nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.secondary-nav a:hover {
+    color: #e63946;
 }
