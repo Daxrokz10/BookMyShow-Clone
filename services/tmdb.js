@@ -1,6 +1,8 @@
 const axios = require("axios");
+require('dotenv').config();
+console.log("API_KEY from env:", process.env.API_KEY); // Add this line
 
-const API_KEY = "c1d218a9cfc45879f43b4fa2812994f4";  // replace with your key
+const API_KEY = process.env.API_KEY 
 const BASE_URL = "https://api.themoviedb.org/3";
 
 async function getNowPlaying() {
