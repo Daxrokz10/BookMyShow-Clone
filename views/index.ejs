@@ -17,7 +17,33 @@
     <header>
         <%- include('./partials/header')%>
     </header>
-    <main></main>
+    <main>
+        <section class="banner-recommended container">
+            <div class="banner mt-4 mb-4">
+                <img src="/images/banner.avif" alt="">
+            </div>
+            <div class="recommended">
+                <h2 class="text-left mb-2">Recommended Movies</h2>
+                <div class="row">
+                <% movies.forEach(movie => { %>
+                    <div class="col-md-3 mb-4">
+                    <div class="movie-card d-flex flex-column">
+                        <div class="movie-image">
+                        <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" 
+                            alt="<%= movie.title %>">
+                        </div>
+                        <div class="movie-text">
+                        <h2><%= movie.title %></h2>
+                        <p><%= movie.genre_ids.join(", ") %></p> <!-- just IDs for now -->
+                        </div>
+                    </div>
+                    </div>
+                <% }) %>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer>
         <!-- place footer here -->
     </footer>

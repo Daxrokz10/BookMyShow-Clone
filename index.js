@@ -13,6 +13,13 @@ app.use(express.static(path.join(__dirname, 'assets')));
 
 app.use('/',router);
 
+const authRouter = require("./routers/authRouter");
+app.use("/auth", authRouter);
+
+const movieRouter = require("./routers/movieRouter");
+app.use("/movies", movieRouter);
+
+
 app.listen(port,()=>{
     try {
         db;

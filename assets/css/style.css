@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+/* NAVBAR */
+
 .navbar-main {
     background-color: #fff;
     border-bottom: 1px solid #ddd;
@@ -27,4 +29,15 @@
 
 .secondary-nav a:hover {
     color: #e63946;
+}
+
+/* banner-recommended */
+
+.banner-recommended .banner img{
+    border-radius: 8px;
+}
+.banner-recommended .recommended img{
+    width: 200px;
+    height: 350px;
+    border-radius: 8px;
 }
