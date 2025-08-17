@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const movieController = require('../controllers/movieController');
 
-// Add your movie routes here
+router.get('/:id',movieController.getMovieById);
 
 module.exports = router;

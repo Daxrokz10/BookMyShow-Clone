@@ -26,18 +26,19 @@
                 <h2 class="text-left mb-2">Recommended Movies</h2>
                 <div class="row">
                 <% movies.forEach(movie => { %>
-                    <div class="col-md-3 mb-4">
+                    <a href="/movies/<%= movie.id %>" class="col mb-4 text-decoration-none text-black" >
+
                     <div class="movie-card d-flex flex-column">
                         <div class="movie-image">
-                        <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" 
-                            alt="<%= movie.title %>">
+                            <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" 
+                                alt="<%= movie.title %>">
                         </div>
                         <div class="movie-text">
-                        <h2><%= movie.title %></h2>
-                        <p><%= movie.genre_ids.join(", ") %></p> <!-- just IDs for now -->
+                            <h2><%= movie.title %></h2>
+                                <p><%= movie.genre_ids.join(", ") %></p> <!-- just IDs for now -->
                         </div>
-                    </div>
-                    </div>
+                    </div>    
+                    </a>
                 <% }) %>
                 </div>
                 </div>

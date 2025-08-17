@@ -1,6 +1,5 @@
 const axios = require("axios");
 require('dotenv').config();
-console.log("API_KEY from env:", process.env.API_KEY); // Add this line
 
 const API_KEY = process.env.API_KEY 
 const BASE_URL = "https://api.themoviedb.org/3";
@@ -29,4 +28,16 @@ async function getMovieDetails(movieId) {
   }
 }
 
-module.exports = { getNowPlaying, getMovieDetails };
+async function getMovieCredits(movieId) {
+  try {
+    const res = await axios.get(`${BASE_URL}/movie/${movieId}/credits`, {
+      params: { api_key: API_KEY, language: "en-US" }
+    });
+    return res.data.cast; // returns cast array
+  } catch (err) {
+    console.error("Error fetching credits:", err.message);
+    return [];
+  }
+}
+
+module.exports = { getNowPlaying, getMovieDetails, getMovieCredits };
