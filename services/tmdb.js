@@ -7,7 +7,7 @@ const BASE_URL = "https://api.themoviedb.org/3";
 async function getNowPlaying() {
   try {
     const res = await axios.get(`${BASE_URL}/movie/now_playing`, {
-      params: { api_key: API_KEY, language: "en-US", page: 1 }
+      params: { api_key: API_KEY, language: "hi-IN", page: 1 , region:"IN" }
     });
     return res.data.results;
   } catch (err) {
