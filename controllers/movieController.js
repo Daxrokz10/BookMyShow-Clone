@@ -3,10 +3,11 @@ const { getMovieDetails, getMovieCredits } = require("../services/tmdb");
 exports.getMovieById = async (req, res) => {
   try {
     const movieId = req.params.id;
-    const movie = await getMovieDetails(movieId);
+    const { movie, backdrops } = await getMovieDetails(movieId);
     const cast = await getMovieCredits(movieId);
 
-    res.render("pages/movie", { movie, cast });
+    // Pass both to your EJS template
+    res.render("pages/movie", { movie, cast, backdrops });
   } catch (err) {
     res.status(500).send("Error loading movie details");
   }

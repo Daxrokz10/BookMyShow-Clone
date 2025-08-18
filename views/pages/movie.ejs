@@ -24,50 +24,55 @@
             <%- include('../partials/header.ejs')%>
         </header>
         <main>
-            <div class="container mt-5">
-  <div class="row">
-    <!-- Poster -->
-    <div class="col-md-4">
-      <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" alt="<%= movie.title %>" class="img-fluid rounded">
-    </div>
-
-    <!-- Info -->
-    <div class="col-md-8">
-      <h1><%= movie.title %> (<%= movie.original_language.toUpperCase() %>)</h1>
-      <p>
-        ⭐ <%= movie.vote_average %>/10 (<%= movie.vote_count %> votes)
-      </p>
-      <p>
-        <%= Math.floor(movie.runtime/60) %>h <%= movie.runtime%60 %>m •
-        <%= movie.genres.map(g => g.name).join(", ") %> •
-        <%= movie.release_date %>
-      </p>
-      <a href="#" class="btn btn-danger">Book Tickets</a>
-    </div>
-  </div>
-
-  <!-- About -->
-        <div class="mt-5">
-            <h3>About the movie</h3>
-            <p><%= movie.overview %></p>
-        </div>
-
-        <!-- Cast -->
-        <div class="mt-5">
-            <h3>Cast</h3>
-            <div class="d-flex flex-row overflow-auto">
-            <% cast.slice(0,10).forEach(member => { %>
-                <div class="text-center me-3">
-                <img src="https://image.tmdb.org/t/p/w200<%= member.profile_path %>" 
-                    alt="<%= member.name %>" 
-                    class="rounded-circle mb-2" 
-                    style="width:100px; height:100px; object-fit:cover;">
-                <p><%= member.name %></p>
+          <% if (backdrops && backdrops.length > 0) { %>
+            <div 
+              class="movie-backdrop-container"
+              style="background-image: linear-gradient(to right, rgba(20,20,20,0.95) 40%, rgba(20,20,20,0.7) 100%), url('https://image.tmdb.org/t/p/original<%= backdrops[0].file_path %>'); background-size: cover; background-position: center;">
+          <% } else { %>
+            <div class="movie-backdrop-container" style="background: #222;">
+          <% } %>
+            <div class="container py-5">
+              <div class="row align-items-center">
+                <!-- Poster -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                  <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" alt="<%= movie.title %>" class="img-fluid rounded shadow">
                 </div>
-            <% }) %>
+                <!-- Info -->
+                <div class="col-md-8 text-white">
+                  <h1><%= movie.title %> (<%= movie.original_language.toUpperCase() %>)</h1>
+                  <p>
+                    ⭐ <%= movie.vote_average %>/10 (<%= movie.vote_count %> votes)
+                  </p>
+                  <p>
+                    <%= Math.floor(movie.runtime/60) %>h <%= movie.runtime%60 %>m •
+                    <%= movie.genres.map(g => g.name).join(", ") %> •
+                    <%= movie.release_date %>
+                  </p>
+                  <a href="#" class="btn btn-danger">Book Tickets</a>
+                </div>
+              </div>
+              <!-- About -->
+              <div class="mt-5 text-white">
+                <h3>About the movie</h3>
+                <p><%= movie.overview %></p>
+              </div>
+              <!-- Cast -->
+              <div class="mt-5 text-white">
+                <h3>Cast</h3>
+                <div class="d-flex flex-row overflow-auto">
+                  <% cast.slice(0,10).forEach(member => { %>
+                    <div class="text-center me-3">
+                      <img src="https://image.tmdb.org/t/p/w200<%= member.profile_path %>" 
+                        alt="<%= member.name %>" 
+                        class="rounded-circle mb-2" 
+                        style="width:100px; height:100px; object-fit:cover;">
+                      <p><%= member.name %></p>
+                    </div>
+                  <% }) %>
+                </div>
+              </div>
             </div>
-        </div>
-        </div>
+          </div>
         </main>
         <footer>
             <!-- place footer here -->
