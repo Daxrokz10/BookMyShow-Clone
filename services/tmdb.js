@@ -7,7 +7,7 @@ const BASE_URL = "https://api.themoviedb.org/3";
 async function getNowPlaying() {
   try {
     const res = await axios.get(`${BASE_URL}/movie/now_playing`, {
-      params: { api_key: API_KEY, language: "hi-IN", page: 1 , region:"IN" }
+      params: { api_key: API_KEY, language: "hi-IN",language: "en-US", page: 1 , region:"IN" }
     });
     return res.data.results;
   } catch (err) {
@@ -48,18 +48,5 @@ async function getMovieCredits(movieId) {
   }
 }
 
-// Example using axios
-async function fetchNowPlaying() {
-    try {
-        const response = await axios.get('https://api.themoviedb.org/3/movie/now_playing', {
-            params: { api_key: process.env.API_KEY }
-        });
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching now playing movies:', error.message);
-        // Optionally, handle specific error codes here
-        return null;
-    }
-}
 
 module.exports = { getNowPlaying, getMovieDetails, getMovieCredits };
