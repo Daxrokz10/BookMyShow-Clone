@@ -36,6 +36,18 @@ async function getMovieDetails(movieId) {
   }
 }
 
+async function getGenres(){
+  try {
+    const res = await axios.get(`${BASE_URL}/genre/movie/list`, {
+      params: { api_key: API_KEY, language: "en-US" }
+    });
+    return res.data.genres;
+  } catch (error) {
+    console.error("Error fetching genres:", err.message);
+    return [];
+  }
+}
+
 async function getMovieCredits(movieId) {
   try {
     const res = await axios.get(`${BASE_URL}/movie/${movieId}/credits`, {
@@ -49,4 +61,4 @@ async function getMovieCredits(movieId) {
 }
 
 
-module.exports = { getNowPlaying, getMovieDetails, getMovieCredits };
+module.exports = { getNowPlaying, getMovieDetails, getMovieCredits ,getGenres};

@@ -31,7 +31,7 @@
                     <span>Welcome, <%= session.username %>!</span>
                     <a href="/auth/logout" class="btn btn-outline-danger ms-2">Logout</a>
                     <% } else { %>
-                    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#authModal">
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#authModal">
                         Sign In / Sign Up
                     </button>
                     <% } %>

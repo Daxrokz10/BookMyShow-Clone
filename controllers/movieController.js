@@ -7,7 +7,7 @@ exports.getMovieById = async (req, res) => {
     const cast = await getMovieCredits(movieId);
 
     // Pass both to your EJS template
-    res.render("pages/movie", { movie, cast, backdrops });
+    res.render("pages/movie", { movie, cast, backdrops,session:req.session });
   } catch (err) {
     res.status(500).send("Error loading movie details");
   }
