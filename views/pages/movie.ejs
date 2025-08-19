@@ -19,69 +19,7 @@
 
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-main px-3">
-            <div class="container">
-                <!-- Logo -->
-                <a class="navbar-brand fw-bold" href="#">
-                    <img src="https://in.bmscdn.com/webin/common/icons/logo.svg" alt="Logo" height="30">
-                </a>
-
-                <!-- Search Bar -->
-                <form class="d-flex search-bar mx-auto">
-                    <input class="form-control me-2" type="search"
-                        placeholder="Search for Movies, Events, Plays, Sports and Activities" aria-label="Search">
-                </form>
-
-                <!-- Right Side -->
-                <div class="d-flex align-items-center">
-                    <!-- Location -->
-                    <div class="dropdown me-3">
-                        <a class="dropdown-toggle text-dark text-decoration-none" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Mumbai
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Mumbai</a></li>
-                            <li><a class="dropdown-item" href="#">Delhi</a></li>
-                            <li><a class="dropdown-item" href="#">Bangalore</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Sign In Button -->
-                    <% if (session && session.username) { %>
-                    <span>Welcome, <%= session.username %>!</span>
-                    <a href="/auth/logout" class="btn btn-outline-danger ms-2">Logout</a>
-                    <% } else { %>
-                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#authModal">
-                        Sign In / Sign Up
-                    </button>
-                    <% } %>
-
-                    <!-- Menu Icon -->
-                    <button class="btn btn-light border-0">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Secondary Navbar -->
-        <div class="secondary-nav py-1 px-3 d-flex justify-content-between container">
-            <div>
-                <a href="#">Movies</a>
-                <a href="#">Stream</a>
-                <a href="#">Events</a>
-                <a href="#">Plays</a>
-                <a href="#">Sports</a>
-                <a href="#">Activities</a>
-            </div>
-            <div>
-                <a href="#">ListYourShow</a>
-                <a href="#">Corporates</a>
-                <a href="#">Offers</a>
-                <a href="#">Gift Cards</a>
-            </div>
-        </div>
+            <%- include('../partials/header.ejs')%>
         </header>
         <main>
           <% if (backdrops && backdrops.length > 0) { %>
