@@ -44,6 +44,10 @@
     object-fit: cover;
 }
 
+.banner-recommended .banner2{
+    object-fit: cover;
+}
+
 h2{
     font-size: 22px;
 }

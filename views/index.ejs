@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Movie Tickets,Plays,Sports,Events & Cinemas near You - BookMyShow</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -12,6 +12,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="https://assets-in.bmscdn.com/webin/common/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -38,8 +39,8 @@
                             <h2><%= movie.title %></h2>
                                 <p style="max-width: 180px; overflow-wrap: break-word;"><%= movie.genre_ids.map(id=>
                                     {
-                                        const genre = genres.find(g => g.id === id);
-                                        return genre ? genre.name : id;
+                                        let genre = genres.find(g => g.id === id);
+                                        return genre? ' '+genre.name : id;
                                     }) %></p> 
                         </div>
                     </div>    
@@ -47,6 +48,9 @@
                 <% }) %>
                 </div>
                 </div>
+            </div>
+            <div class="banner2 mt-4 mb-4">
+                <img src="/images/banner-2.avif" width="98%" height="100%" alt="banner">
             </div>
         </section>
     </main>

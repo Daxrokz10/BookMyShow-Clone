@@ -28,8 +28,13 @@ exports.signup = async (req, res) => {
             return res.redirect('/?signupError=1');
         }
         const hashed = await bcrypt.hash(password, 10);
-        await User.create({ username, email, password: hashed });
-        return res.redirect('/?signupSuccess=1');
+        const newUser = await User.create({ username, email, password: hashed });
+
+        // Automatically log in the user after signup
+        req.session.userId = newUser._id;
+        req.session.username = newUser.username;
+
+        return res.redirect('/');
     } catch (err) {
         return res.redirect('/?signupError=1');
     }
