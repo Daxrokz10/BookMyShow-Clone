@@ -22,7 +22,7 @@
     <main>
         <section class="banner-recommended container">
             <div class="banner mt-4 mb-4">
-                <img src="/images/banner.avif" alt="">
+                <img src="/images/banner.avif" width="98%" height="100%" alt="banner">
             </div>
             <div class="recommended">
                 <h2 class="text-left mb-2">Recommended Movies</h2>
@@ -34,6 +34,9 @@
                         <div class="movie-image">
                             <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" 
                                 alt="<%= movie.title %>">
+                            <div class="movie-ratings">
+                                <p><i class="bi bi-star-fill"></i> <%= movie.vote_average %>/10 <%= movie.vote_count %> Votes</p>
+                            </div>
                         </div>
                         <div class="movie-text">
                             <h2><%= movie.title %></h2>
