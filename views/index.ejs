@@ -40,7 +40,7 @@
                         </div>
                         <div class="movie-text">
                             <h2><%= movie.title %></h2>
-                                <p style="max-width: 180px; overflow-wrap: break-word;"><%= movie.genre_ids.map(id=>
+                                <p style="max-width: 180px; overflow-wrap: break-word; color: #666666;"><%= movie.genre_ids.map(id=>
                                     {
                                         let genre = genres.find(g => g.id === id);
                                         return genre? ' '+genre.name : id;
