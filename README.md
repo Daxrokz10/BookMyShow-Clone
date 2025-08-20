@@ -5,7 +5,7 @@ A full-stack Node.js + Express + MongoDB clone of BookMyShow, featuring movie li
 **Live Demo:**  
 [https://bookmyshow-clone-kf31.onrender.com/](https://bookmyshow-clone-kf31.onrender.com/)
 
-(./assets/images/ss.png)
+![ss](./assets/images/ss.png)
 ---
 
 ## Features
